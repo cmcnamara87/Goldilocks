@@ -1,0 +1,160 @@
+/* Profile Picture Module */
+.profilepic {
+    position: relative;
+}
+    .profilepic img {
+        height: 60px;
+        width: 60px;
+        border-radius:60px;
+        border: 4px solid #1a1a1a;
+    }
+    .profilepic-badge {
+        position: absolute;
+        background-color: blue;
+        color: white;
+        right: 0px;
+        bottom: 0px;
+        padding: 1px 8px;
+        border-radius:10px;
+    }
+    .profilepic-banner {
+
+    }
+
+/* Input box module */
+.inputbox {
+    overflow: auto;
+}
+    .inputbox-input {
+        border: 1px solid #d9d9d9 !important;
+        padding: 10px;
+        overflow: auto;
+        padding: 7px 14px !important;
+        border-radius: 0px !important;
+        width: 300px;
+
+    }
+    .inputbox-button {
+        border: 1px solid #d9d9d9;
+        padding: 7px 14px !important;
+    }
+
+
+/* Card Module */
+.card {
+    width: 100%;
+    background-color: white;;
+    margin-bottom: 27px;
+}
+    .card-title, .card-type, .card-item, .card-section {
+        border-bottom: 1px solid #d9d9d9;
+    }
+    .card-type {
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        line-height: 40px;
+    }
+    .card-title {
+        text-align: center;
+    }
+    .card-title h1 {
+        line-height: 105px;
+    }
+    .card-item {
+        overflow: auto;
+        position: relative;
+    }
+    .card-item-left {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        width: 100px;
+        background-color: #f2f2f2;
+        text-align: center;
+        color: #838383;
+    }
+        .card-item-left-text {
+            font-size: 14px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 100;
+            line-height: 14px;
+        }
+        .card-item-left-number-small {
+            font-size: 48px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 100;
+            line-height: 48px;
+            margin-bottom: 10px;
+        }
+    .card-item-contents {
+        margin-left: 100px;
+        width: 400px;
+        padding: 14px;
+        padding-right: 0px;
+        overflow: auto;
+    }
+    .card-item-right {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        width: 84px;
+        text-align: center;
+
+    }
+
+/* List Module */
+.list {
+
+}
+    .list-item-number {
+        font-size: 105px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 100;
+    }
+    .list-item-details-heading {
+        margin-top: 0px;
+        margin-bottom: 3px;
+    }
+    .list-item-details-location {
+        display: block;
+        margin-bottom: 14px;
+    }
+
+
+
+/* Experience Module */
+.experience {
+
+}
+    .experience-profile {
+        float: left;
+        margin-right: 14px;
+    }
+
+    .experience-content {
+        overflow: auto;
+        margin-top: 3px;
+    }
+        .experience-username {
+            margin-bottom: 7px;
+            font-size: 18px;
+        }
+    .experience-progress-next_level {
+        float: right;
+        margin-left: 14px;
+    }
+    .experience-content .progress {
+        margin: 0;
+        text-align: right;
+        border-radius: 20px;
+        background-color: #00537e;
+        background-image: none;
+    }
+    .experience-content .progress .bar {
+        background-color: #008ee5;
+        background-image: none;
+    }
+

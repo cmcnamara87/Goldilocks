@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Data Source" product="MySQL" version="5.1.52-cll" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.22 ( Revision: ${bzr.revision-id} )" uuid="6aaa8c80-500f-4179-bc2b-92fb30a6092e">
+    <extra-name-characters>#@</extra-name-characters>
+    <identifier-quote-string>`</identifier-quote-string>
+    <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+    <jdbc-url>jdbc:mysql://craigmcnamara.com:3306/craigmcn_goldilocks</jdbc-url>
+    <user-name>craigmcn_goldilo</user-name>
+    <user-password>dfc0dfcbdfc9dfd8df9ddfe4dfcbdfda</user-password>
+    <schema-pattern>craigmcn_goldilocks.*</schema-pattern>
+    <default-schemas>craigmcn_goldilocks.*</default-schemas>
+    <default-dialect>MySQL</default-dialect>
+    <libraries>
+      <library>
+        <url>jar://$PROJECT_DIR$/mysql-connector-java-5.1.22-bin.jar!/</url>
+      </library>
+      <library>
+        <url>file://$PROJECT_DIR$/mysql-connector-license.txt</url>
+      </library>
+    </libraries>
+    <table name="days" schema="" catalog="craigmcn_goldilocks" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
+      <column name="user_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="date" sqlType="DATE" length="10" precision="0" nullable="true" jdbcType="91" />
+      <primary-key name="PRIMARY" columns="id" />
+    </table>
+    <table name="foods" schema="" catalog="craigmcn_goldilocks" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="source_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <primary-key name="PRIMARY" columns="id" />
+    </table>
+    <table name="foods_meals" schema="" catalog="craigmcn_goldilocks" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
+      <column name="quantity_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="meal_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <primary-key name="PRIMARY" columns="id" />
+    </table>
+    <table name="meals" schema="" catalog="craigmcn_goldilocks" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
+      <column name="day_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <primary-key name="PRIMARY" columns="id" />
+    </table>
+    <table name="quantity" schema="" catalog="craigmcn_goldilocks" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
+      <column name="food_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="quantity" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <column name="descriptor" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="kilojoules" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <primary-key name="PRIMARY" columns="id" />
+    </table>
+    <table name="source" schema="" catalog="craigmcn_goldilocks" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12" />
+      <primary-key name="PRIMARY" columns="id" />
+    </table>
+    <table name="users" schema="" catalog="craigmcn_goldilocks" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
+      <column name="email" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12" />
+      <column name="height" sqlType="FLOAT" length="12" precision="0" nullable="true" jdbcType="7" />
+      <column name="dob" sqlType="DATE" length="10" precision="0" nullable="true" jdbcType="91" />
+      <column name="gender" sqlType="ENUM" length="6" precision="0" nullable="true" jdbcType="1" />
+      <primary-key name="PRIMARY" columns="id" />
+    </table>
+    <table name="weights" schema="" catalog="craigmcn_goldilocks" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true" />
+      <column name="date" sqlType="DATE" length="10" precision="0" nullable="true" jdbcType="91" />
+      <column name="kilograms" sqlType="FLOAT" length="12" precision="0" nullable="true" jdbcType="7" />
+      <column name="user_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4" />
+      <primary-key name="PRIMARY" columns="id" />
+    </table>
+  </data-source>
+</component>
