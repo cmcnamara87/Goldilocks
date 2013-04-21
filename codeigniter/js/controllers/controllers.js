@@ -12,7 +12,7 @@ function RegisterCtrl($scope, $http, $location, User, Session, $cookieStore) {
 
 function LoginCtrl($scope, $http, $location, User, Session, $cookieStore) {
     console.log("Login controller loaded");
-    
+
     $scope.credentials = {};
 
     $scope.loginWithCredentials = function(credentials) {

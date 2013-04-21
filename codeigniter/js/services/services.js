@@ -2,7 +2,7 @@ goldilocks.service('Api', function() {
     this.onlineServer = 'http://goldilocks.me/';
     this.localServer = 'http://localhost\\:8888/';
 
-    this.baseUrl = onlineServer + 'index.php/api/';
+    this.baseUrl = this.onlineServer + 'index.php/api/';
 });
 
 // Stores session variables
