@@ -46,8 +46,42 @@ function DetailsCtrl($scope, Session, $location) {
     }
 }
 
-function HomeCtrl($scope, $cookieStore, Weight) {
+function HomeCtrl($scope, $cookieStore, Weight, Day, Meal) {
     $scope.user = $cookieStore.get('user');
+
+    // Load today
+    $scope.today = Day.today({
+        'userId': $scope.user.id},
+        function() {
+            console.log("successfully got the day");
+
+            // Meal is an array of food
+            $scope.newMeal = {
+                'ownFood'   : [],
+                'dayId'     : $scope.today.id
+            };
+            console.log("New Meal", $scope.newMeal);
+
+        }
+    );
+
+
+
+
+    $scope.saveNewMeal = function(newMeal) {
+        var savedNewMeal = Meal.save(newMeal, function() {
+            console.log("meal saved", savedNewMeal);
+        });
+        $scope.newMeal.ownFood = [];
+        $scope.today.ownMeal.unshift(savedNewMeal);
+    }
+
+    $scope.addFood = function(food) {
+        $scope.newMeal.ownFood.push(angular.copy(food));
+        $scope.food = {};
+    }
+
+
     $scope.addWeight = function(newWeight) {
         var weight = Weight.save({
             kilograms: newWeight,

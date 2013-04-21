@@ -7,13 +7,26 @@
 <form class="form-horizontal">
     <h3>Age</h3>
     <div class="control-group">
-        <label class="control-label" for="day">Date of birth</label>
+        <label class="control-label" for="dob">Date of birth</label>
         <div class="controls">
-            <input ng-model="user.day" type="text" id="day" placeholder="day"/>
-            <input ng-model="user.month" type="text" placeholder="month"/>
-            <input ng-model="user.year" type="text" placeholder="year"/>
+            <input ng-model="user.dob" type="text" id="dob" placeholder="DD/MM/YYYY"/>
         </div>
     </div>
+
+    <h3>Gender</h3>
+    <div class="control-group">
+        <label class="control-label" for="weight">Male</label>
+        <div class="controls">
+            <input ng-model="user.gender" type="radio" name="gender" id="optionsRadios1" value="male" checked>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="weight">Female</label>
+        <div class="controls">
+            <input ng-model="user.gender" type="radio" name="gender" id="optionsRadios2" value="female">
+        </div>
+    </div>
+
 
     <h3>Measurements</h3>
     <div class="control-group">

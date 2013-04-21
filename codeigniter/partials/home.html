@@ -1,20 +1,48 @@
 
 <h2>{{ user.fullName }}</h2>
 
-<pre>
+<!--<pre>
     {{ user | json }}
-</pre>
+</pre>-->
 
-<div>
-    Add your weight
+<div class="alert alert-success">
+    <h3>Record new weight</h3>
     <input ng-model="newWeight" type="text" placeholder="weight"/>KG
     <a ng-click="addWeight(newWeight)" class="btn btn-success" href>Add Weight</a>
 </div>
 
-<div>
+<div class="alert">
+    <a ng-click="saveNewMeal(newMeal)" class="btn btn-success pull-right" href>Add Meal</a>
     <h3>Add New Meal</h3>
+
+    <form >
+        <input ng-model="food.name" type="text" placeholder="Food Name"/>
+        <input ng-model="food.kilojoules" type="text" placeholder="Kilojoules"/>KJ
+        <button ng-click="addFood(food)" type="submit" class="btn btn-success">Add Food</button>
+    </form>
+
+    <div>
+        <div ng-repeat="food in newMeal.ownFood">
+            {{ food.name }} {{ food.kilojoules }}
+        </div>
+    </div>
 
 </div>
 <div>
-    <h3>What You've Eaten</h3>
+    <h3>What You've Eaten Today</h3>
+    <div class="alert alert-info" ng-repeat="meal in today.ownMeal">
+        <div ng-repeat="food in meal.ownFood">
+            <dl>
+                <dt>
+                    {{ food.name }}
+                </dt>
+                <dd>
+                    {{ food.kilojoules }} KJ
+                </dd>
+            </dl>
+        </div>
+        <div ng-show="meal.ownFood.length == 0" class="muted">
+            No foods recorded.
+        </div>
+    </div>
 </div>

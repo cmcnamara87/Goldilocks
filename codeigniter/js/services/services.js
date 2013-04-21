@@ -1,10 +1,15 @@
 goldilocks.service('Api', function() {
     this.baseUrl = (function() {
-        if (!window.location.origin) {
-            // make other browsers match up with how webkit does it
-            window.location.origin = window.location.protocol + "//" + window.location.host;
-        }
-        return window.location.origin + '/index.php/api/';
+//        var url = window.location.origin;
+//        if (!window.location.origin) {
+//            // make other browsers match up with how webkit does it
+//            url = window.location.origin = window.location.protocol + "//" + window.location.host;
+//        }
+
+        // Replace : with \\: for angularjs
+        var url = window.location.protocol + "//" + window.location.host.replace(":", "\\:");
+
+        return url + '/index.php/api/';
     })();
 
 });
@@ -13,6 +18,20 @@ goldilocks.service('Api', function() {
 goldilocks.factory('Session', function() {
     return {}
 })
+
+
+goldilocks.factory('Day', function($resource, Api) {
+    return $resource(Api.baseUrl + 'day/id/:id', {
+        id: '@id'
+    }, {
+        'today': {
+            method: "GET",
+            params: {
+                'type': 'today'
+            }
+        }
+    });
+});
 
 goldilocks.factory('User', function($resource, Api) {
     return $resource(Api.baseUrl + 'user/id/:id', {
@@ -27,6 +46,11 @@ goldilocks.factory('User', function($resource, Api) {
     });
 });
 
+goldilocks.factory('Meal', function($resource, Api) {
+    return $resource(Api.baseUrl + 'meal/id/:id', {
+        id: '@id'
+    });
+});
 
 goldilocks.factory('Weight', function($resource, Api) {
     return $resource(Api.baseUrl + 'weight/id/:id', {

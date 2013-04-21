@@ -20,10 +20,87 @@ class Api extends REST_Controller
 {
     protected $rest_format = 'json';
 
-    function days_get() {
-        $userId = $_GET['userId'];
+    function day_get() {
+        // get the day
+        if(isset($_GET['type'])) {
+            // special types of get
+            if($_GET['type'] == "today") {
 
+                $user = R::load('user', $this->get('userId'));
 
+                // get today's day
+                $day = R::findOne(
+                    'day',
+                    'date = :date AND user_id = :user_id
+                    ORDER BY date DESC',
+                    array(
+                        ':date'     => date('Y-m-d'),
+                        ':user_id'  => $user->id
+                    )
+                );
+
+                if(!$day && !$day->id) {
+                    // we didnt find a day, so lets make a bunch for the next 30 for this user
+                    // get the user first
+
+                    $days = R::dispense('day', 30);
+                    $dayCount = 0;
+                    foreach($days as $day) {
+                        $day->user = $user;
+                        $day->day = $dayCount + 1;
+                        $day->date = date('Y-m-d', strtotime("+" . $dayCount++ .  "day"));
+                    }
+                    R::storeAll($days);
+                    $day = $days[0];
+                }
+            }
+        } else {
+            // probaby getting by id
+        }
+
+        // Load the meals
+        $day->with('ORDER BY id DESC')->ownMeal;
+
+        // Load the food eaten
+        foreach($day->ownMeal as $meal) {
+            $meal->with('ORDER BY id DESC')->ownFood;
+        }
+
+        if ($day->id) {
+            $this->response($day->export(), 200); // 200 being the HTTP response code
+        } else {
+            $this->response(array('error' => 'Day could not be found'), 404);
+        }
+
+    }
+
+    function meal_get() {
+
+    }
+
+    function meal_post() {
+        if(!$this->post('dayId') && !$this->post('ownFood')) {
+            $this->response(NULL, 400);
+        }
+
+        // Create a meal
+        $meal = R::dispense('meal');
+        $meal->day = R::load('day', $this->post('dayId'));
+        $meal->ownFood = array();
+
+        // Add in all the foods
+        foreach($this->post('ownFood') as $ownFood) {
+            $food = R::dispense('food');
+            $food->import($ownFood);
+            $meal->ownFood[] = $food;
+        }
+        // Save the meal
+        R::store($meal);
+
+        $meal->ownFood;
+
+        // Return the meal
+        $this->response($meal->export(), 200); // 200 being the HTTP response code
     }
 
     function weight_post() {
@@ -109,9 +186,21 @@ class Api extends REST_Controller
             $_POST = json_decode(file_get_contents("php://input"), true);
         }
 
+        // Create the user
         $user = R::dispense('user');
         $user->import($_POST);
         R::store($user);
+
+        // Create the days
+        // Lets create all the days for hte user
+        $days = R::dispense('day', 30);
+        $dayCount = 0;
+        foreach($days as $day) {
+            $day->user = $user;
+            $day->day = $dayCount + 1;
+            $day->date = date('Y-m-d', strtotime("+" . $dayCount++ .  "day"));
+        }
+        R::storeAll($days);
 
         $this->response($user->export(), 200); // 200 being the HTTP response code
     }
