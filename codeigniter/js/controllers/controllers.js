@@ -10,8 +10,10 @@ function RegisterCtrl($scope, $http, $location, User, Session, $cookieStore) {
     }
 }
 
-function LoginCtrl($scope, $http, $location, User, Session, $cookieStore) {
+function LoginCtrl($scope, $http, $location, Api, User, Session, $cookieStore) {
     console.log("Login controller loaded");
+
+    console.log("base url", Api.baseUrl);
 
     $scope.credentials = {};
 

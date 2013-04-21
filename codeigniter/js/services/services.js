@@ -1,8 +1,12 @@
 goldilocks.service('Api', function() {
-    this.onlineServer = 'http://goldilocks.me/';
-    this.localServer = 'http://localhost\\:8888/';
+    this.baseUrl = (function() {
+        if (!window.location.origin) {
+            // make other browsers match up with how webkit does it
+            window.location.origin = window.location.protocol + "//" + window.location.host;
+        }
+        return window.location.origin;
+    })();
 
-    this.baseUrl = this.onlineServer + 'index.php/api/';
 });
 
 // Stores session variables
