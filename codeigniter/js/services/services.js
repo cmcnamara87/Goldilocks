@@ -4,7 +4,7 @@ goldilocks.service('Api', function() {
             // make other browsers match up with how webkit does it
             window.location.origin = window.location.protocol + "//" + window.location.host;
         }
-        return window.location.origin + '/';
+        return window.location.origin + '/index.php/api/';
     })();
 
 });
