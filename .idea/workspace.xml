@@ -2,32 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/codeigniter/js/lib/angular-cookies.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/codeigniter/js/lib/angular-resource.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/codeigniter/application/config/development/database.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/codeigniter/partials/home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/codeigniter/application/controllers/home.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/codeigniter/js/services/services.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeigniter/css/base.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeigniter/css/layout.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeigniter/css/modules.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/codeigniter/partials/register.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/codeigniter/application/third_party/rb.php" afterPath="$PROJECT_DIR$/codeigniter/application/third_party/rb/rb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeigniter/application/controllers/api.php" afterPath="$PROJECT_DIR$/codeigniter/application/controllers/api.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeigniter/js/app.js" afterPath="$PROJECT_DIR$/codeigniter/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeigniter/application/config/autoload.php" afterPath="$PROJECT_DIR$/codeigniter/application/config/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeigniter/js/controllers/controllers.js" afterPath="$PROJECT_DIR$/codeigniter/js/controllers/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeigniter/application/config/database.php" afterPath="$PROJECT_DIR$/codeigniter/application/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeigniter/partials/details.html" afterPath="$PROJECT_DIR$/codeigniter/partials/details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeigniter/index.html" afterPath="$PROJECT_DIR$/codeigniter/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeigniter/index.php" afterPath="$PROJECT_DIR$/codeigniter/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeigniter/partials/login.html" afterPath="$PROJECT_DIR$/codeigniter/partials/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeigniter/application/libraries/rb.php" afterPath="$PROJECT_DIR$/codeigniter/application/libraries/rb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codeigniter/application/controllers/welcome.php" afterPath="$PROJECT_DIR$/codeigniter/application/controllers/welcome.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codeigniter/index.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Goldilocks.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" time="1366352206876" ignored="false" />
+    <file path="/Dummy.txt" changelist="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" time="1366508705690" ignored="false" />
     <file path="/index.php" changelist="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" time="1366364487048" ignored="false" />
     <file path="/controllers.js" changelist="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" time="1366507535116" ignored="false" />
     <file path="/app.js" changelist="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" time="1366466671031" ignored="false" />
@@ -36,7 +16,7 @@
     <file path="/welcome.php" changelist="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" time="1366364110214" ignored="false" />
     <file path="/rb.php" changelist="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" time="1366448216806" ignored="false" />
     <file path="/main.html" changelist="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" time="1366440570285" ignored="false" />
-    <file path="/index.html" changelist="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" time="1366466745131" ignored="false" />
+    <file path="/index.html" changelist="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" time="1366508625076" ignored="false" />
     <file path="/details.html" changelist="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" time="1366464680622" ignored="false" />
     <file path="$USER_HOME$/Downloads/angular-resolve-master/client/js/starTrekServices.js" changelist="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" time="1366451912863" ignored="false" />
     <file path="/home.html" changelist="48c1923a-ca9d-40d6-96a5-dbc6a6b8d6f1" time="1366504963053" ignored="false" />
@@ -59,10 +39,10 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="api.php" pinned="false" current="true" current-in-tab="true">
+            <file leaf-file-name="api.php" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/codeigniter/application/controllers/api.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state line="24" column="0" selection-start="652" selection-end="652" vertical-scroll-proportion="-0.046728972">
+                  <state line="24" column="0" selection-start="652" selection-end="652" vertical-scroll-proportion="0.030364372">
                     <folding />
                   </state>
                 </provider>
@@ -79,10 +59,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="true">
+      <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/codeigniter/js/controllers/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="48" selection-start="859" selection-end="859" vertical-scroll-proportion="0.34684685">
+            <state line="31" column="48" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/codeigniter/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="0" selection-start="1104" selection-end="1180" vertical-scroll-proportion="-14.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/codeigniter/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="21" selection-start="0" selection-end="1437" vertical-scroll-proportion="0.7009346">
               <folding />
             </state>
           </provider>
@@ -100,7 +98,7 @@
       <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/codeigniter/partials/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="6" selection-start="321" selection-end="321" vertical-scroll-proportion="-10.0">
+            <state line="16" column="6" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,12 +141,12 @@
         <option value="$PROJECT_DIR$/codeigniter/js/services.js/services.js" />
         <option value="$PROJECT_DIR$/codeigniter/partials/details.html" />
         <option value="$PROJECT_DIR$/codeigniter/partials/login.html" />
-        <option value="$PROJECT_DIR$/codeigniter/index.html" />
         <option value="$PROJECT_DIR$/codeigniter/js/app.js" />
         <option value="$PROJECT_DIR$/codeigniter/partials/home.html" />
         <option value="$PROJECT_DIR$/codeigniter/js/services/services.js" />
         <option value="$PROJECT_DIR$/codeigniter/js/controllers/controllers.js" />
         <option value="$PROJECT_DIR$/codeigniter/application/controllers/api.php" />
+        <option value="$PROJECT_DIR$/codeigniter/index.html" />
       </list>
     </option>
   </component>
@@ -505,8 +503,8 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -545,14 +543,14 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <list size="0" />
@@ -589,11 +587,10 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21331196" sideWeight="0.6700288" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21651965" sideWeight="0.6700288" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -602,6 +599,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -649,7 +647,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -668,13 +666,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/codeigniter/application/libraries/rb.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="54" selection-start="416" selection-end="416" vertical-scroll-proportion="-8.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/codeigniter/application/libraries/REST_Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="4" selection-start="689" selection-end="719" vertical-scroll-proportion="-7.2">
@@ -703,13 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1104" selection-end="1180" vertical-scroll-proportion="0.5484897">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/codeigniter/js/lib/angular-cookies.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -720,13 +704,6 @@
     <entry file="file://$PROJECT_DIR$/codeigniter/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0933126">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codeigniter/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="62" selection-start="598" selection-end="598" vertical-scroll-proportion="0.28037384">
           <folding />
         </state>
       </provider>
@@ -754,7 +731,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/codeigniter/partials/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="6" selection-start="321" selection-end="321" vertical-scroll-proportion="-10.0">
+        <state line="16" column="6" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -768,14 +745,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/codeigniter/js/controllers/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="48" selection-start="859" selection-end="859" vertical-scroll-proportion="0.34684685">
+        <state line="31" column="48" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/codeigniter/application/controllers/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="652" selection-end="652" vertical-scroll-proportion="-0.046728972">
+        <state line="24" column="0" selection-start="652" selection-end="652" vertical-scroll-proportion="0.030364372">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1104" selection-end="1180" vertical-scroll-proportion="-14.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codeigniter/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="21" selection-start="0" selection-end="1437" vertical-scroll-proportion="0.7009346">
           <folding />
         </state>
       </provider>
