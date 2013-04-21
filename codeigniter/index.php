@@ -18,7 +18,17 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-	define('ENVIRONMENT', 'development');
+
+if($_SERVER['REMOTE_ADDR']=='127.0.0.1' || $_SERVER['REMOTE_ADDR'] == '::1') {
+//    // Local development server
+    define('ENVIRONMENT', 'development');
+} else {
+    define('ENVIRONMENT', 'production');
+}
+
+//echo "<h1>" . ENVIRONMENT . "</h1>";
+
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING

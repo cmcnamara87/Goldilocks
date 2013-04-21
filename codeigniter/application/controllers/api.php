@@ -6,90 +6,148 @@
  * This is an example of a few basic user interaction methods you could use
  * all done with a hardcoded array.
  *
- * @package		CodeIgniter
- * @subpackage	Rest Server
- * @category	Controller
- * @author		Phil Sturgeon
- * @link		http://philsturgeon.co.uk/code/
-*/
+ * @package        CodeIgniter
+ * @subpackage    Rest Server
+ * @category    Controller
+ * @author        Phil Sturgeon
+ * @link        http://philsturgeon.co.uk/code/
+ */
 
 // This can be removed if you use __autoload() in config.php OR use Modular Extensions
-require APPPATH.'/libraries/REST_Controller.php';
+require APPPATH . '/libraries/REST_Controller.php';
 
 class Api extends REST_Controller
 {
-	function user_get()
+    protected $rest_format = 'json';
+
+    function days_get() {
+        $userId = $_GET['userId'];
+
+
+    }
+
+    function weight_post() {
+        // Get out the posted values
+        if(!$this->post('userId') && !$this->post('kilograms')) {
+            $this->response(NULL, 400);
+        }
+
+        $weight = R::dispense('weight');
+        $weight->date = date('Y-m-d');
+        $weight->kilograms = $this->post('kilograms');
+
+        // Get the user
+        $user = R::load('user', $this->post('userId'));
+        $weight->user = $user;
+        R::store($weight);
+
+        $this->response($weight->export(), 200); // 200 being the HTTP response code
+    }
+
+    function user_get()
     {
-        if(!$this->get('id'))
-        {
-        	$this->response(NULL, 400);
+
+        // Now accepting login requests lol, dont ask why
+        // its just the only way i can work this out with angularjs lol
+        if(isset($_GET['type']) && $_GET['type'] == "login") {
+            $user = R::findOne(
+                'user',
+                'email = :email AND password = :password',
+                array(
+                    ':email'    => $_GET['email'],
+                    ':password' => $_GET['password']
+                )
+            );
+        } else {
+            // This is for regular out resty stuff
+            if (!$this->get('id') && !count($_GET)) {
+                $this->response(NULL, 400);
+            }
+
+            $user_id = $this->get('id');
+            $user = R::load('user', $user_id);
         }
 
-        // $user = $this->some_model->getSomething( $this->get('id') );
-    	$users = array(
-			1 => array('id' => 1, 'name' => 'Some Guy', 'email' => 'example1@example.com', 'fact' => 'Loves swimming'),
-			2 => array('id' => 2, 'name' => 'Person Face', 'email' => 'example2@example.com', 'fact' => 'Has a huge face'),
-			3 => array('id' => 3, 'name' => 'Scotty', 'email' => 'example3@example.com', 'fact' => 'Is a Scott!', array('hobbies' => array('fartings', 'bikes'))),
-		);
-		
-    	$user = @$users[$this->get('id')];
-    	
-        if($user)
-        {
-            $this->response($user, 200); // 200 being the HTTP response code
-        }
+        R::preload(array($user), array(
+            'ownWeight'=>'weight'
+        ));
 
-        else
-        {
+        unset($user->password);
+
+        if ($user->id) {
+            $this->response($user->export(), 200); // 200 being the HTTP response code
+        } else {
             $this->response(array('error' => 'User could not be found'), 404);
         }
+
+
+//        list($today,$yesterday) = R::dispense('weight',2);
+//        $today->weight = 182;
+//        $yesterday->weight = 105;
+//        $user->ownWeight[] = $today;
+//        $user->ownWeight[] = $yesterday;
+//        R::store($user);
+
+//        $user->fullName = "hello";
+
+
+
+//        $user->ownWeight;
+
+//        $user->weight;
+//
+//        $user_obj = $user->export(false, true, true);
+//
+
+
     }
-    
+
     function user_post()
     {
-        //$this->some_model->updateUser( $this->get('id') );
-        $message = array('id' => $this->get('id'), 'name' => $this->post('name'), 'email' => $this->post('email'), 'message' => 'ADDED!');
-        
-        $this->response($message, 200); // 200 being the HTTP response code
-    }
-    
-    function user_delete()
-    {
-    	//$this->some_model->deletesomething( $this->get('id') );
-        $message = array('id' => $this->get('id'), 'message' => 'DELETED!');
-        
-        $this->response($message, 200); // 200 being the HTTP response code
-    }
-    
-    function users_get()
-    {
-        //$users = $this->some_model->getSomething( $this->get('limit') );
-        $users = array(
-			array('id' => 1, 'name' => 'Some Guy', 'email' => 'example1@example.com'),
-			array('id' => 2, 'name' => 'Person Face', 'email' => 'example2@example.com'),
-			3 => array('id' => 3, 'name' => 'Scotty', 'email' => 'example3@example.com', 'fact' => array('hobbies' => array('fartings', 'bikes'))),
-		);
-        
-        if($users)
-        {
-            $this->response($users, 200); // 200 being the HTTP response code
+        // Get out the Post stuff from angularjs
+        if(stripos($_SERVER["CONTENT_TYPE"], "application/json") === 0) {
+            $_POST = json_decode(file_get_contents("php://input"), true);
         }
 
-        else
-        {
+        $user = R::dispense('user');
+        $user->import($_POST);
+        R::store($user);
+
+        $this->response($user->export(), 200); // 200 being the HTTP response code
+    }
+
+    function user_delete()
+    {
+        if (!$this->get('id')) {
+            $this->response(NULL, 400);
+        }
+        $user = R::load('user', $this->get('id'));
+
+        R::trash( $user );
+
+        $this->response($user, 200); // 200 being the HTTP response code
+    }
+
+    function users_get()
+    {
+        $users = R::findAll('user');
+
+        if ($users) {
+            $this->response($users, 200); // 200 being the HTTP response code
+        } else {
             $this->response(array('error' => 'Couldn\'t find any users!'), 404);
         }
     }
 
 
-	public function send_post()
-	{
-		var_dump($this->request->body);
-	}
+    public function send_post()
+    {
+        var_dump($this->request->body);
+    }
 
 
-	public function send_put()
-	{
-		var_dump($this->put('foo'));
-	}
+    public function send_put()
+    {
+        var_dump($this->put('foo'));
+    }
 }

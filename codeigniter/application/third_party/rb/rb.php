@@ -614,11 +614,27 @@ class RedBean_OODBBean implements IteratorAggregate, ArrayAccess, Countable {
 				}
 				$v = $v->export($meta, $parents, false, $filters);
 			}
-			$arr[$k] = $v;
+			$arr[$this->underscore2Camelcase($k)] = $v;
 		}
 		if ($meta) $arr['__info'] = $this->__info;
 		return $arr;
 	}
+
+    private function underscore2Camelcase($str) {
+        // Split string in words.
+        $words = explode('_', $str);
+        // don't touch the first word, leave it as lower case
+        $return = array_shift($words);
+        foreach ($words as $word) {
+            // capitalize all the other words
+            $return .= ucfirst(trim($word));
+        }
+
+        return $return;
+    }
+
+
+
 	/**
 	 * Exports the bean to an object.
 	 * 

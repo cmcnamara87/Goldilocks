@@ -7,7 +7,6 @@ goldilocks.factory('Session', function() {
     return {}
 })
 
-
 goldilocks.factory('User', function($resource, Api) {
     return $resource(Api.baseUrl + 'user/id/:id', {
         id: '@id'
@@ -18,5 +17,12 @@ goldilocks.factory('User', function($resource, Api) {
                 'type': 'login'
             }
         }
+    });
+});
+
+
+goldilocks.factory('Weight', function($resource, Api) {
+    return $resource(Api.baseUrl + 'weight/id/:id', {
+        id: '@id'
     });
 });

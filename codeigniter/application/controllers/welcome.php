@@ -21,6 +21,7 @@ class Welcome extends CI_Controller {
 	{
         // craigmcn_goldi
         // jacr7Nap
+        echo "hello world";
 		$this->load->view('welcome_message');
 	}
 }

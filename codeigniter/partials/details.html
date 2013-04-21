@@ -1,13 +1,43 @@
 
-<form name="test">
-    <input type="text" placeholder="height"/>
-    <input type="text" placeholder="weight"/>
-    <div>
-        date of birth
+<h2>User Details</h2>
+
+<pre>
+    {{ user | json }}
+</pre>
+<form class="form-horizontal">
+    <h3>Age</h3>
+    <div class="control-group">
+        <label class="control-label" for="day">Date of birth</label>
+        <div class="controls">
+            <input ng-model="user.day" type="text" id="day" placeholder="day"/>
+            <input ng-model="user.month" type="text" placeholder="month"/>
+            <input ng-model="user.year" type="text" placeholder="year"/>
+        </div>
     </div>
-    <div>
-        <input type="text" placeholder="day"/>
-        <input type="text" placeholder="month"/>
-        <input type="text" placeholder="year"/>
+
+    <h3>Measurements</h3>
+    <div class="control-group">
+        <label class="control-label" for="height">Height</label>
+        <div class="controls">
+            <input ng-model="user.height" type="text" id="height" placeholder="height"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="weight">Current Weight</label>
+        <div class="controls">
+            <input ng-model="user.weight" type="text" id="weight" placeholder="height"/>
+        </div>
+    </div>
+
+
+    <div class="control-group">
+        <div class="controls">
+            <button ng-click="saveDetails(user)" type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn">Cancel</button>
+        </div>
     </div>
 </form>
+
+
+

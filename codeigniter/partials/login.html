@@ -1,40 +1,42 @@
-<div>
+<div ng-controller="LoginCtrl">
     <h2>Login In</h2>
     <form name="login" novalidate>
 
         <div class="muted">
         </div>
         <div>
-            <input ng-model="user.email" type="text" placeholder="Email"/>
+            <input ng-model="credentials.email" type="text" placeholder="Email"/>
         </div>
         <div>
-            <input ng-model="user.password" type="password" placeholder="Password"/>
+            <input ng-model="credentials.password" type="password" placeholder="Password"/>
         </div>
+        <pre>
+            {{ credentials | json  }}
+        </pre>
         <div>
-            <input class="btn btn-primary" type="submit" value="Sign In"/>
+            <input ng-click="loginWithCredentials(credentials)" class="btn btn-primary" type="submit" value="Sign In"/>
         </div>
     </form>
 </div>
 
 
-<div>
+<div ng-controller="RegisterCtrl">
     <h2>Register</h2>
 
-    <form name="register" novalidate>
-        <div>
-            <input type="text" placeholder="Full name"/>
-        </div>
+    <div>
+        <input type="text" ng-model="user.fullName" placeholder="Full name"/>
+    </div>
 
-        <div>
-            <input type="text" placeholder="Email"/>
-        </div>
-        <div>
-            <input type="password" placeholder="Password" />
-        </div>
+    <div>
+        <input type="text" ng-model="user.email" placeholder="Email"/>
+    </div>
+    <div>
+        <input type="password" ng-model="user.password" placeholder="Password" />
+    </div>
 
-        <div>
-            <input class="btn btn-success" type="submit" value="Sign up for Goldilocks"/>
-        </div>
-    </form>
+    <div>
+        <input ng-click="register(user)" class="btn btn-success" type="submit" value="Sign up for Goldilocks"/>
+    </div>
+
 
 </div>

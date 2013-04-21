@@ -1,13 +1,21 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Rb {
+class Rb
+{
 
-    function __construct() {
+    function __construct()
+    {
         // Include database configuration
-        include(APPPATH.'/config/database.php');
+
+
+        if (defined('ENVIRONMENT') && file_exists(APPPATH . '/config/' . ENVIRONMENT . '/database.php')) {
+            include(APPPATH . '/config/' . ENVIRONMENT . '/database.php');
+        } else {
+            include(APPPATH . '/config/database.php');
+        }
 
         // Get Redbean
-        include(APPPATH.'/third_party/rb/rb.php');
+        include(APPPATH . '/third_party/rb/rb.php');
 
         // Database data
         $host = $db[$active_group]['hostname'];

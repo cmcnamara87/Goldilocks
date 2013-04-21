@@ -1,1 +1,25 @@
-<h1>This is the main page</h1>
+
+<h2>Home Page</h2>
+
+
+<pre>
+    {{ user | json }}
+</pre>
+
+<!-- Show something about the user -->
+<div>
+    Hi {{ user.fullName }}
+</div>
+<div>
+    Add your weight
+    <input ng-model="newWeight" type="text" placeholder="weight"/>KG
+    <a ng-click="addWeight(newWeight)" class="btn btn-success" href>Add Weight</a>
+</div>
+
+<div>
+    <h3>Add New Meal</h3>
+
+</div>
+<div>
+    <h3>What You've Eaten</h3>
+</div>

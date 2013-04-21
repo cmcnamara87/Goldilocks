@@ -1,24 +1,25 @@
-var goldilocks = angular.module('goldilocks', []);
+var goldilocks = angular.module('goldilocks', ['ngResource', 'ngCookies']);
+
+
 
 
 goldilocks.config(function($routeProvider) {
 
     $routeProvider.
         when('/', {
-            controller: 'LoginController',
             templateUrl: 'partials/login.html'
         }).
         when('/register', {
-            controller: 'RegisterController',
+            controller: 'RegisterCtrl',
             templateUrl: 'partials/register.html'
         }).
-        when('/checkout', {
-            controller: 'CheckoutController',
-            templateUrl: 'views/checkout.html'
+        when('/home', {
+            controller: 'HomeCtrl',
+            templateUrl: 'partials/home.html'
         }).
-        when('/thank-you', {
-            controller: 'ThankYouController',
-            templateUrl: 'views/thank-you.html'
+        when('/details/', {
+            controller: 'DetailsCtrl',
+            templateUrl: 'partials/details.html'
         }).
         when('/customer', {
             controller: 'CustomerController',
